@@ -5,7 +5,7 @@ function Home() {
         <div className="hero-content">
           <div className="profile-image-container">
             <img 
-              src="/profile.jpg" 
+              src="/portfolio-website/profile.jpg" 
               alt="Rishitha Rao Daggu" 
               className="profile-image"
             />
