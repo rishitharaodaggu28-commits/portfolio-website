@@ -77,7 +77,6 @@ body {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .brand-title {
@@ -98,29 +97,11 @@ body {
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  position: relative;
 }
 
-.nav-link:hover {
-  color: var(--text);
-  background: rgba(99, 102, 241, 0.1);
-}
-
-.nav-link.active {
+.nav-link:hover, .nav-link.active {
   color: var(--primary);
   background: rgba(99, 102, 241, 0.15);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 2px;
 }
 
 .hero-section {
@@ -144,13 +125,7 @@ body {
   border-radius: 50%;
   border: 4px solid var(--glass-border);
   box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
-  transition: all 0.3s ease;
   object-fit: cover;
-}
-
-.profile-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.5);
 }
 
 .hero-text h1 {
@@ -163,13 +138,11 @@ body {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   color: var(--secondary);
-  font-weight: 500;
   margin-bottom: 15px;
 }
 
@@ -183,7 +156,6 @@ body {
   font-weight: 600;
   margin-bottom: 25px;
   position: relative;
-  display: inline-block;
 }
 
 .section-title::after {
@@ -194,10 +166,9 @@ body {
   width: 60px;
   height: 3px;
   background: var(--gradient);
-  border-radius: 3px;
 }
 
-.card {
+.card, .interest-card, .detail-card {
   background: var(--glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
@@ -206,7 +177,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.card:hover {
+.card:hover, .interest-card:hover, .detail-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
@@ -222,35 +193,12 @@ body {
 }
 
 .interest-card {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 25px;
   text-align: center;
-  transition: all 0.3s ease;
-}
-
-.interest-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border-color: var(--primary);
 }
 
 .interest-icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
-}
-
-.interest-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: var(--text);
-}
-
-.interest-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
 }
 
 .details-grid {
@@ -259,40 +207,24 @@ body {
   gap: 20px;
 }
 
-.detail-card {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-.detail-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--primary);
-}
-
 .detail-card h3 {
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-bottom: 8px;
-  font-weight: 500;
 }
 
 .detail-card p {
   font-size: 1rem;
-  color: var(--text);
   font-weight: 500;
 }
 
-.links-container {
+.links-container, .skills-container {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.social-link {
+.social-link, .skill-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -306,32 +238,9 @@ body {
   transition: all 0.3s ease;
 }
 
-.social-link:hover {
+.social-link:hover, .skill-badge:hover {
   background: var(--gradient);
-  border-color: transparent;
   transform: translateY(-3px);
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.skill-badge {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-  border: 1px solid var(--glass-border);
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.skill-badge:hover {
-  background: var(--gradient);
-  transform: scale(1.05);
-  border-color: transparent;
 }
 
 .footer {
@@ -347,13 +256,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
 }
 
 .footer-content p {
   color: var(--text-muted);
-  font-size: 0.9rem;
 }
 
 .footer-links {
@@ -364,37 +270,22 @@ body {
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
   color: var(--primary);
 }
 
-.projects-page {
-  padding-top: 20px;
-}
-
 .projects-hero {
   text-align: center;
   margin-bottom: 50px;
-  animation: fadeInUp 0.8s ease;
 }
 
 .projects-hero h1 {
   font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.projects-hero p {
-  font-size: 1.2rem;
-  color: var(--text-muted);
 }
 
 .projects-grid {
@@ -405,17 +296,11 @@ body {
 
 .project-card {
   background: var(--glass);
-  backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease backwards;
 }
-
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
 
 .project-card:hover {
   transform: translateY(-10px);
@@ -427,11 +312,6 @@ body {
   color: white;
 }
 
-.project-header h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
 .project-content {
   padding: 25px;
 }
@@ -439,7 +319,6 @@ body {
 .project-description {
   color: var(--text-muted);
   margin-bottom: 20px;
-  line-height: 1.7;
 }
 
 .tech-stack {
@@ -455,7 +334,6 @@ body {
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.8rem;
-  font-weight: 500;
 }
 
 .github-link {
@@ -465,26 +343,17 @@ body {
   color: var(--text);
   text-decoration: none;
   padding: 12px 20px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: var(--primary);
   border-radius: 10px;
-  font-weight: 500;
-  transition: all 0.3s ease;
 }
 
 .github-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -492,54 +361,14 @@ body {
     flex-direction: column;
     text-align: center;
   }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .profile-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .interests-grid, .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
+  .hero-text h1 { font-size: 2rem; }
+  .profile-image { width: 150px; height: 150px; }
+  .nav-container { flex-direction: column; gap: 15px; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 1.75rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .projects-hero h1 {
-    font-size: 2rem;
-  }
-
-  .skill-badge {
-    padding: 8px 15px;
-    font-size: 0.8rem;
-  }
+  .hero-text h1 { font-size: 1.75rem; }
+  .section-title { font-size: 1.5rem; }
+  .projects-hero h1 { font-size: 2rem; }
 }
